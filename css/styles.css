@@ -228,11 +228,6 @@ h3 {
     padding-top: 24px;
     margin-right: 120px;
   }
-
-  .page-nav,
-  address {
-    display: block;
-  }
 }
 
 @media screen and (min-width: 1158px) {
@@ -408,11 +403,14 @@ address {
 
 .burger-button {
   /* Кнопка меню скрыта на больших экранах */
-  display: none;
+  display: flex;
 }
 
 /* --- Навигация социальных списков --- */
 @media screen and (min-width: 768px) {
+  .burger-button {
+    display: none;
+  }
   .social-list {
     display: flex;
     gap: 12px;
@@ -429,22 +427,22 @@ address {
 
 @media screen and (min-width: 768px) {
   /* Убираем лишние отступы на планшете */
-  .social-list-li:first-child a {
+  .social-list-item:first-child a {
     padding: 0;
   }
 
-  .social-list-li:last-child a {
+  .social-list-item:last-child a {
     padding: 0;
   }
 }
 
 @media screen and (min-width: 1158px) {
   /* Сброс внутренних отступов для десктопа */
-  .social-list-li.first a {
+  .social-list-item.first a {
     padding: 0;
   }
 
-  .social-list-li.last a {
+  .social-list-item.last a {
     padding: 0;
   }
 }
@@ -488,7 +486,7 @@ button.burger-button {
   z-index: 9999;
   width: 100%;
   height: 100%;
-   position: relative;
+  position: relative;
   display: flex;
   flex-direction: column;
 
@@ -506,23 +504,27 @@ button.burger-button {
   visibility: visible;
   pointer-events: auto;
 }
+/* Строка 507 — Начинаем блок мобильного меню */
+.mobile-menu {
+  position: fixed; /* Обязательно, чтобы меню было поверх сайта */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff; /* Твой белый цвет со строки 515 */
 
-@media screen and (min-width: 768px) {
-  /* Скрываем мобильное меню на планшетах */
-  .mobile-menu-backdrop {
-    display: none;
-  }
-}
-
-  background-color: #ffffff;
   padding: 72px 16px 40px 16px;
-  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  z-index: 999;
 
-  transition: transform 250ms ease;
-  will-change: transform;
-}
+  /* Анимация появления */
+  transform: translateX(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+} /* Строка 521 — Закрываем блок */
 
-.mobile-menu-backdrop.is-open .mobile-menu {
+.mobile-menu.is-open {
   transform: translateX(0);
 }
 
@@ -565,7 +567,7 @@ button.burger-button {
   gap: 24px;
 }
 
-.mobile-menu .social-list-li a {
+.mobile-menu .social-list-item a {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
@@ -574,8 +576,8 @@ button.burger-button {
   transition: color 250ms ease;
 }
 
-.mobile-menu .social-list-li a:hover,
-.mobile-menu .social-list-li a:focus {
+.mobile-menu .social-list-item a:hover,
+.mobile-menu .social-list-item a:focus {
   color: #404bbf;
 }
 
@@ -1185,7 +1187,6 @@ li.portfolio-list-item:hover {
 /* --- Текст инфо в футере --- */
 .footer-content p.footer-info {
   color: #f4f4fd;
-  padding-top: 16px;
 }
 
 p.footer-info {
@@ -1398,12 +1399,6 @@ footer ul.social-wrapper li.team-social-list-item .social-link:focus {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-}
-
-@media screen and (min-width: 768px) {
-  .modal-overlay {
-    display: none;
-  }
 }
 
 /* Класс для открытия формы */
@@ -1696,10 +1691,4 @@ button.modal-close:focus {
 .akcent:hover {
   color: #404bbf;
   text-decoration: none;
-}
-
-/* --- Состояния кнопки отправки (финал) --- */
-.button.modal-send-button:hover,
-.button.modal-send-button:focus {
-  background-color: #404bbf;
 }
