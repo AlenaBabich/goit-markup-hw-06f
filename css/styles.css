@@ -242,6 +242,7 @@ h3 {
 }
 
 /* Настройки навигации и адреса */
+.page-nav,
 .nav-list,
 address {
   display: none;
@@ -299,7 +300,9 @@ address {
 
 @media screen and (min-width: 768px) {
   /* --- Навигация (Планшет/Десктоп) --- */
-
+  .page-nav {
+    display: block;
+  }
   .nav-a {
     display: inline-block;
     padding-bottom: 5px;
@@ -608,6 +611,9 @@ button.burger-button {
   .mobile-menu {
     display: none;
   }
+  .main-banner-hero {
+    padding: 112px 0;
+  }
 }
 /* --- Секция Hero --- */
 .main-banner-hero {
@@ -656,18 +662,17 @@ button.burger-button {
     font-size: 56px;
     margin-bottom: 36px;
   }
-}
 
-/* --- Фон Hero для планшета --- */
-.main-banner-hero {
-  background-image:
-    linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-    image-set(
-      url('../images/m-and-t-images/people-office-t.jpg') 1x,
-      url('../images/2x-images/people-office-t@2x.jpg') 2x
-    );
+  /* --- Фон Hero для планшета --- */
+  .main-banner-hero {
+    background-image:
+      linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      image-set(
+        url('../images/m-and-t-images/people-office-t.jpg') 1x,
+        url('../images/2x-images/people-office-t@2x.jpg') 2x
+      );
+  }
 }
-
 /* --- Hero для десктопа --- */
 @media screen and (min-width: 1158px) {
   .main-banner-hero {
@@ -816,14 +821,23 @@ section.team-block ul.team-list {
   justify-content: center;
   gap: 72px 12px;
 }
+.team-item {
+  width: 264px;
+  margin: 0 auto;
+}
 
 @media screen and (min-width: 768px) {
   /* Планшетная сетка команды */
+
   section.team-block ul.team-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 64px 24px;
+  }
+
+  .team-item {
+    margin: 0;
   }
 }
 
@@ -964,12 +978,18 @@ section.team-block ul li.team-social-list-item .social-link {
     row-gap: 72px;
     justify-content: center;
   }
+  .portfolio-list-item {
+    width: calc((100% - 24px) / 2);
+  }
 }
 
 @media screen and (min-width: 1158px) {
   /* Сетка портфолио для десктопа */
   .portfolio-list {
     row-gap: 48px;
+  }
+  .portfolio-list-item {
+    width: calc((100% - 48px) / 3);
   }
 }
 
@@ -1474,7 +1494,7 @@ button.modal-close:focus {
 }
 
 /* --- Поля ввода в форме модалки --- */
-.modal-form-input {
+.modal-input {
   width: 100%;
   height: 40px;
   padding: 8px 8px 8px 45px;
@@ -1493,7 +1513,7 @@ button.modal-close:focus {
   outline: none;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-form input:focus,
+.modal-input:focus,
 .modal-form textarea:focus {
   border: 1px solid #4d5ae5;
   outline: none;
