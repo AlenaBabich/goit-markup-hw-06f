@@ -1,500 +1,528 @@
-
-/* @media screen and (min-width: 768px) {
-
-}
-
-@media screen and (min-width: 1158px) {
-	
-} */
-
+/* --- Основные настройки страницы --- */
 body {
-	background-color: #ffffff;
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
-	color: #2E2F42;
-	font-weight: 400;
-	letter-spacing: 0.02em;
-}	
+  line-height: 1.5;
+  font-family: Roboto, sans-serif; /* Без лишних кавычек */
+  font-size: 16px;
+  font-weight: 400;
+  color: #2e2f42; /* Цвет Slate */
+  letter-spacing: 0.02em;
+  background-color: #ffffff; /* Белый фон */
+}
 
-/* block scroll on page when modal window open */
+/* Блокировка скролла для модалки */
 body:has(.modal-overlay.is-open) {
-	overflow-y: hidden;
+  overflow-y: hidden;
 }
 
+/* --- Стили кнопок (Hero и общие) --- */
 button {
-	font-family: inherit;
-	font-weight: 500;	
-	font-size: 16px;
-	color: white;
-	background-color: #4D5AE5;
-	line-height: 1.5;
-	letter-spacing: 0.04em;
-	border: none;
-	border-radius: 4px;
-	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
-	cursor: pointer;
-	padding: 16px 32px;
-	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* --- Мои стили для главной кнопки --- */
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  border: none;
+  min-width: 169px;
+  height: 56px;
+  border-radius: 4px;
+
+  /* Оформление текста */
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+
+  /* Цвета и тени */
+  color: #ffffff;
+  background-color: #4d5ae5; /* Цвет Ирис */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  /* Отступы и анимация */
+  padding: 16px 32px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-button:hover {
-	background-color: #404BBF;
+button:hover,
+button:focus {
+  background-color: #404bbf; /* Цвет Океан */
 }
 
 p {
-	padding: 0;
-	margin: 0;
-	font-style: normal;
-	font-weight: 400;
+  /* --- Основные параметры текста --- */
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-	font-family: inherit;
-	color: #000;
-	font-weight: 400;
-	font-size: 12px;
-	line-height: 1.333;
-	letter-spacing: 0.04em;
-	text-decoration: none;
-	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-a:active,
-a.link {
-	color: #4D5AE5;
+  /* Стили для ссылок и переходов */
+  font-family: inherit;
+  color: #2e2f42;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 a:hover,
 a:focus {
-	color: #404bbf; 
+  color: #404bbf; /* Цвет Океан */
+}
+
+a:active,
+a.link {
+  color: #4d5ae5; /* Цвет Ирис */
 }
 
 ul,
 ol {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+  /* Сброс стандартных списков */
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	margin: 0;
-	padding: 0;
-	color: #2E2F42;
-}
-
-input {
-	font-family: inherit;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Заголовки проекта */
+  color: #2e2f42;
+  margin: 0;
+  padding: 0;
 }
 
 section {
-	padding-top: 96px;
-	padding-bottom: 96px;
-	display: flex;
-    justify-content: center;
+  /* Базовая геометрия секций */
+  display: block;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
+input {
+  font-family: inherit;
+}
+
+section {
+  padding-top: 96px;
+  padding-bottom: 96px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ================= АДАПТИВНАЯ ВЕРСТКА ================= */
+
 @media screen and (min-width: 1158px) {
-	
-	section {
-        padding-top: 120px;
-        padding-bottom: 120px;
-    }
+  /* Настройки секций для больших экранов */
+  section {
+    padding-bottom: 120px;
+    padding-top: 120px;
+  }
 }
 
 h1 {
-	font-family: inherit;
-	font-size: 36px;
-	font-weight: 700;
-	line-height: 1.11;
-	letter-spacing: 0.02em;
-	text-align: center;
-	color: white;
-	width: 216px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #ffffff; /* Белый цвет заглавными */
+  width: 216px;
+  margin: 0 auto;
 }
 
-
 @media screen and (min-width: 768px) {
-	
-	h1 {
-		font-size: 56px;
-		width: 496px;
-	}
-
+  /* Заголовок для планшетной версии */
+  h1 {
+    width: 496px;
+    font-size: 56px;
+  }
 }
 
 h2 {
-	font-family: inherit;
-	font-size: 36px;
-	font-weight: 700;
-	letter-spacing: 0.02em;
-	text-align: center;
-	color: #2E2F42;
+  /* Главные подзаголовки */
+  font-family: inherit;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #2e2f42;
 }
 
 h3 {
-	font-family: inherit;
-	font-size: 20px;
-	font-weight: 500;
-	letter-spacing: 0.02em;
-	color: #2E2F42;
+  /* Заголовки карточек и блоков */
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
 }
 
 @media screen and (min-width: 1158px) {
-	
-	h3 {
-		font-size: 20px;
-	}
+  /* Тонкая настройка подзаголовков для десктопа */
+  h3 {
+    font-size: 20px;
+  }
 }
 
+/* --- Служебный класс для скрытия элементов --- */
 .visually-hidden {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	border: 0;
-	padding: 0;
-	white-space: nowrap;
-	clip-path: inset(100%);
-	clip: rect(0 0 0 0);
-	overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
+/* --- Вспомогательные цветовые классы --- */
 .background-navy-blue {
-	background-color: #2E2F42;
+  background-color: #2e2f42;
 }
 
 .color-navy-blue {
-	color: #2E2F42;
+  color: #2e2f42;
 }
 
 .color-slate {
-	color: #434455;
+  color: #434455;
 }
 
 .center {
-	text-align: center;
+  text-align: center;
 }
 
+/* --- Оформление логотипа страницы --- */
 .page-logo {
-	font-family: "Raleway", sans-serif;
-	font-weight: 700;
-	line-height: 1.17;
-	text-transform: uppercase;
-	color: #2E2F42;
-	text-decoration: none;
-	font-size:  18px;
-	font-weight: 700;
-	letter-spacing: 0.03em;
-	display: block;
-	padding-top: 17px;
-	padding-bottom: 17px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #2e2f42;
+  text-decoration: none;
+  display: block;
+  padding-top: 17px;
+  padding-bottom: 17px;
 }
 
+/* --- Адаптивность логотипа --- */
 @media screen and (min-width: 768px) {
-	
-	.page-logo {
-	padding-top: 24px;
-	padding-bottom: 24px;
-	margin-right: 120px;
-	}
+  .page-logo {
+    padding-bottom: 24px;
+    padding-top: 24px;
+    margin-right: 120px;
+  }
 
-	.page-nav, 
-	address {
-		display: block;
-	}
-
-}
-
-@media screen and (min-width: 1158px) {
-	.page-logo {
-		margin-right: 76px;
-	}
-}
-
-.accent-blue {
-  color: #4D5AE5;
-}
-
-.nav-list,
-address {
-	display: none;
-}
-
-.container {
-	width: 100%;
-	max-width: 320px;
-	padding: 0 16px;
-	margin: 0 auto;
-}
-
-@media screen and (min-width: 768px) {
- 
-	.container {
-		max-width: 768px;
+  .page-nav,
+  address {
+    display: block;
   }
 }
 
 @media screen and (min-width: 1158px) {
-  
-	.container {
-    	max-width: 1158px;
-		padding: 0 15px;
- 	}
+  /* Смещение для десктопной версии */
+  .page-logo {
+    margin-right: 76px;
+  }
 }
 
-/* header */
+.accent-blue {
+  color: #4d5ae5; /* Ирис */
+}
+
+/* Настройки навигации и адреса */
+.nav-list,
+address {
+  display: none;
+}
+
+/* --- Глобальный контейнер проекта --- */
+.container {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media screen and (min-width: 768px) {
+  /* Планшетная сетка */
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  /* Десктопная сетка */
+  .container {
+    max-width: 1158px;
+    padding: 0 15px;
+  }
+}
+
+/* ================= ШАПКА САЙТА (HEADER) ================= */
 
 .header-container {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .header-container .container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .page-header {
-	border-bottom: 1px solid #E7E9FC;
-	box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
-			  0px 1px 1px rgba(46, 47, 66, 0.16),
-			  0px 1px 6px rgba(46, 47, 66, 0.08);
+  border-bottom: 1px solid #e7e9fc; /* Cornflower */
+  background-color: #ffffff;
+  box-shadow:
+    0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 @media screen and (min-width: 768px) {
+  /* --- Навигация (Планшет/Десктоп) --- */
 
-	/* navigation */
+  .nav-a {
+    display: inline-block;
+    padding-bottom: 5px;
+  }
 
-	.page-nav .nav-list a:hover,
-	.page-nav .nav-list a:focus {
-		color: #404BBF;
-	}
+  .nav-a:active,
+  .nav-a.link-active {
+    color: #404bbf;
+  }
 
-	nav a {
-		padding-bottom: 5px;
-	}
+  .page-nav .nav-list a:hover,
+  .page-nav .nav-list a:focus {
+    color: #404bbf;
+  }
 
-	nav a:active {
-		color: #404BBF;
-	}
-
-	.page-nav .nav-list {
-		display: flex;
-		gap: 40px;
-	}
-
-	.page-nav .nav-list a {
-		font-family: 'Roboto', sans-serif;
-		font-weight: 500;
-		font-style: medium;
-		font-size: 16px;
-		line-height: 1.5;
-		letter-spacing: 0.02em;
-		color:#2E2F42;
-		padding-top: 24px;
-		padding-bottom: 24px;
-		display: block;
-		transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-	}
-
-	.nav-list-item {
-	position: relative;
-	}
-
-	.nav-list-link.active {
-		color: #404bbf;
-	}
-
-	.nav-list-link::after,
-	.nav-list-link.active::after {
-	content: "";
-	position: absolute;
-	left: 0;
-	bottom: -1px;
-	width: 100%;
-	height: 4px;
-	background-color: #404BBF;
-	border-radius: 2px;
-	}
-
-	.nav-list-link::after {
-		/* transition: transform 0.3s ease; */
-		transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-		transform: scaleX(0);
-		transform-origin: left;
-	}
-
-	.nav-list-link.active::after {
-		transform: none;
-	}
-
-	.nav-list-link:hover::after {
-		transform: scaleX(1);
-	}
-
-	/* end navigation */
-
-	address {
-		display: block;
-		margin-left: auto;
-		font-style: normal;
-	}
-
-	
-
-	.social-list li a {
-		font-family: 'Roboto', sans-serif;
-		font-weight: 400;
-		font-size: 12px;
-		line-height: 1.17;
-		letter-spacing: 0.02em;
-		color: #434455;
-		padding-top: 24px;
-		padding-bottom: 24px;
-		display: block;
-		font-style: normal;
-		transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-	}
-
-	@media screen and (min-width: 1158px) {
-		
-		.social-list li a {
-			font-size: 16px;
-			line-height: 1.5;
-		}
-
-	}
-
-	.social-list li a:hover,
-	.social-list li a:focus {
-		color: #404BBF;
-	}
-
-	.burger-button {
-		display: none;
-	}
-
+  .page-nav .nav-list {
+    display: flex;
+    gap: 40px;
+  }
 }
 
-/* adress-social-menu */
+.page-nav .nav-list a {
+  /* --- Оформление ссылок навигации --- */
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.nav-list-item {
+  /* Контейнер для позиционирования линии */
+  position: relative;
+}
+
+.nav-list-link.active {
+  color: #404bbf; /* Цвет Ocean */
+}
+
+/* Линия подчеркивания для активной ссылки и при наведении */
+.nav-list-link::after,
+.nav-list-link.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #404bbf;
+}
+
+/* --- Анимация подчеркивания ссылок --- */
+.nav-list-link::after {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-list-link.active::after {
+  transform: none;
+}
+
+.nav-list-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* --- Секция контактов в шапке (Address) --- */
+address {
+  font-style: normal;
+  margin-left: auto;
+  display: block; /* Убедись, что в HTML это внутри медиа-запроса */
+}
+
+.social-list-li a {
+  /* Стили для ссылок в адресном блоке */
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  color: #434455; /* Цвет Slate */
+
+  padding-top: 24px;
+  padding-bottom: 24px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media screen and (min-width: 1158px) {
+  /* --- Настройка шрифтов для десктопа --- */
+  .social-list-li a {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+.social-list-li a:hover,
+.social-list-li a:focus {
+  color: #404bbf; /* Цвет Ocean */
+}
+
+.burger-button {
+  /* Кнопка меню скрыта на больших экранах */
+  display: none;
+}
+
+/* --- Навигация социальных списков --- */
 @media screen and (min-width: 768px) {
-	.social-list {
-		display: flex;
-		gap: 12px;
-		flex-direction: column;
-	}
+  .social-list {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+  }
 }
 
 @media screen and (min-width: 1158px) {
-	.social-list {
-		gap: 40px;
-		flex-direction: row;
-	}
+  .social-list {
+    flex-direction: row;
+    gap: 40px;
+  }
 }
 
 @media screen and (min-width: 768px) {
-	
-	.social-list li.first a {
-		padding: 0;
-	}
+  /* Убираем лишние отступы на планшете */
+  .social-list-li:first-child a {
+    padding: 0;
+  }
 
-	.social-list li.last a {
-		padding: 0;
-	}
+  .social-list-li:last-child a {
+    padding: 0;
+  }
 }
 
 @media screen and (min-width: 1158px) {
-	
-	.social-list li.first a {
-		padding: 0;
-	}
+  /* Сброс внутренних отступов для десктопа */
+  .social-list-li.first a {
+    padding: 0;
+  }
 
-	.social-list li.last a {
-        padding: 0;
-	}
+  .social-list-li.last a {
+    padding: 0;
+  }
 }
-	
-/* end-adress-social-menu */
 
-/* burger */
-
+/* --- Настройка бургер-меню --- */
 .page-nav-burger {
-	margin-left: auto;
+  margin-left: auto;
 }
 
 @media screen and (min-width: 768px) {
-	
-	.page-nav-burger {
-		display: none;
-	}
-
+  /* Скрываем бургер на планшетах и выше */
+  .page-nav-burger {
+    display: none;
+  }
 }
 
-
-
+/* Стилизация кнопки вызова меню */
 button.burger-button {
-	border-radius: 0;
-	background: none;
-	padding: 0;
-	box-shadow: none;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  border: none; /* Добавила для чистоты */
 }
 
-/* burger-icon */
-
+/* --- Иконка бургера --- */
 /* .page-nav-burger {
-	position: absolute;
-	top: 21px;
-    right: 20px;
-	z-index: 1000;
+  position: absolute;
+  top: 21px;
+  right: 20px;
+  z-index: 1000;
 } */
 
-/* burger-menu */
+/* ================= МОБИЛЬНОЕ МЕНЮ ================= */
 
+/* --- Фон мобильного меню (Backdrop) --- */
 .mobile-menu-backdrop {
-	position: fixed;
-	z-index: 9999;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
 
-	opacity: 0;
-	visibility: hidden;
-	pointer-events: none;
-
-	transition: opacity 250ms ease;
+  background-color: rgba(46, 47, 66, 0.4); /* Добавила полупрозрачный фон */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 250ms ease,
+    visibility 250ms ease;
 }
 
 .mobile-menu-backdrop.is-open {
- 	opacity: 1;
-  	visibility: visible;
-  	pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 @media screen and (min-width: 768px) {
+  /* Скрываем мобильное меню на планшетах */
   .mobile-menu-backdrop {
     display: none;
   }
 }
 
+/* --- Контейнер мобильного меню --- */
 .mobile-menu {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-width: 100%; /* Гарантия на весь экран */
 
-	margin-left: auto;
-	padding: 72px 16px 40px 16px;
-	background-color: #fff;
+  background-color: #ffffff;
+  padding: 72px 16px 40px 16px;
+  margin-left: auto;
 
-	/* transform: translateX(100%); to movw menu from the right side */
-	transition: transform 250ms ease;
-	will-change: transform;
+  transition: transform 250ms ease;
+  will-change: transform;
 }
 
 .mobile-menu-backdrop.is-open .mobile-menu {
@@ -502,1132 +530,1130 @@ button.burger-button {
 }
 
 @media screen and (min-width: 768px) {
-	
-	.mobile-menu {
-		padding: 72px 24px 40px 24px;
-	}
-
+  /* Сброс отступов меню для планшета */
+  .mobile-menu {
+    padding: 72px 24px 40px 24px;
+  }
 }
 
+/* --- Список навигации в мобильном меню --- */
 .mobile-nav-list {
-	display: flex;
-	gap: 40px;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .mobile-link {
-	font-family: Roboto, sans-serif;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.11;
-    letter-spacing: 0.02em;
-    color: #2E2F42;
-    display: block;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
 }
 
 .mobile-link.active {
-	color: #404BBF;
+  color: #404bbf; /* Тот самый правильный цвет Ocean */
 }
 
-.mobile-menu nav {
-	margin-bottom: 168px;
+.mobile-menu-nav {
+  margin-bottom: 168px;
 }
 
+/* --- Социальные сети в мобильном меню --- */
 .mobile-menu .social-list {
-	display: flex;
-	gap: 24px;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.mobile-menu .social-list li a {
-	font-weight: 500;
-	font-size: 20px;
-	line-height: 1.2;
-	letter-spacing: 0.02em;
+.mobile-menu .social-list-li a {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #434455;
+  transition: color 250ms ease;
 }
 
+.mobile-menu .social-list-li a:hover,
+.mobile-menu .social-list-li a:focus {
+  color: #404bbf;
+}
+
+/* --- Секция адреса в мобильном меню --- */
 .mobile-menu address.mobile-address {
-	display: block;
-	margin-bottom: 48px;
-	margin-top: auto;
-} 
-
-.mobile-menu .social-wrapper {
-	gap: 40px;
-	justify-content: space-between;
+  display: block;
+  margin-top: auto;
+  margin-bottom: 48px;
 }
 
-.mobile-menu .social-wrapper .mobile-menu-social-list-item .social-link {
-    background-color: rgb(77, 90, 229);
-    display: flex;
-    box-shadow: none;
-    width: 40px;
-    height: 40px;
-    padding: 8px;
-    border-radius: 50%;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+/* --- Обертка для соцсетей --- */
+.mobile-menu .social-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.mobile-menu .social-wrapper .mobile-menu-social-list-item {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background-color: #4d5ae5; /* Iris */
+  border-radius: 50%;
+  box-shadow: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-menu .social-wrapper .mobile-menu-social-list-item svg {
-    fill: rgb(244, 244, 253);
+  fill: #f4f4fd; /* Cloud */
 }
 
-/* .mobile-menu {
-	DO NOT DELETE BELOW - CLASS FOR WORK OF THE MOBILE MENU 
-	opacity: 0;
-  	visibility: hidden;
-	pointer-events: none;
-} */
+/* --- Служебные классы для работы меню --- */
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
 
-/* DO NOT DELETE - CLASS FOR WORK OF MOBILE MENU */
-		/* .mobile-menu.is-open {
-			opacity: 1;
-			visibility: visible;
-			pointer-events: auto;
-		} */
-
-
-/* hero banner */
-
+/* --- Секция Hero --- */
 .main-banner-hero {
-	padding-top: 72px;
-	padding-bottom: 72px;
-
-	background-image:
-	linear-gradient(
-		rgba(46, 47, 66, 0.7),
-		rgba(46, 47, 66, 0.7)
-	),
-	image-set(
-		url("../images/m-and-t-images/people-office-m.jpg") 1x,
-		url("../images/2x-images/people-office-m@2x.jpg") 2x
-	);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	max-width: 1440px;
-	margin: 0 auto;
+  background-color: #2e2f42;
+  background-image:
+    linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url(../images/m-and-t-images/people-office-m.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 72px 0;
 }
 
-@media screen and (min-width: 768px) {
-
-	.main-banner-hero {
-		padding-top: 112px;
-		padding-bottom: 112px;
-	}
-
+/* Настройки для Retina */
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .main-banner-hero {
+    background-image:
+      linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url(../images/2x-images/people-office-m@2x.jpg);
+  }
 }
 
-@media screen and (min-width: 1158px) {
-	.main-banner-hero {
-		padding-top: 188px;
-		padding-bottom: 188px;
-	}
-}
-
+/* --- Заголовок баннера --- */
 .main-title {
-	color: #ffffff;
-	font-family: 'Roboto', sans-serif;
-	font-weight: 700;
-	text-align:center;
-	line-height: 1.07;
-	letter-spacing: 0.02em;
-	max-width: 216px;
-	margin: 0 auto;
-	font-size: 36px;
-	margin-bottom: 72px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #ffffff;
+  max-width: 216px;
+  margin-bottom: 72px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-
+/* --- Адаптив заголовка Hero --- */
 @media screen and (min-width: 768px) {
-	
-	.main-title {
-		max-width: 496px;
-		font-size: 56px;
-		margin-bottom: 36px;
-	}
-
-	.main-banner-hero {
-		background-image:
-		linear-gradient(
-			rgba(46, 47, 66, 0.7),
-			rgba(46, 47, 66, 0.7)
-		),
-		image-set(
-			url("../images/m-and-t-images/people-office-t.jpg") 1x,
-			url("../images/2x-images/people-office-t@2x.jpg") 2x
-		);
-	}
-
+  .main-title {
+    max-width: 496px;
+    font-size: 56px;
+    margin-bottom: 36px;
+  }
 }
 
+/* --- Фон Hero для планшета --- */
+.main-banner-hero {
+  background-image:
+    linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    image-set(
+      url('../images/m-and-t-images/people-office-t.jpg') 1x,
+      url('../images/2x-images/people-office-t@2x.jpg') 2x
+    );
+}
+
+/* --- Hero для десктопа --- */
 @media screen and (min-width: 1158px) {
-	.main-banner-hero {
-		padding-top: 188px;
-		padding-bottom: 188px;
-		background-image:
-			linear-gradient(
-				rgba(46, 47, 66, 0.7),
-				rgba(46, 47, 66, 0.7)
-			),
-			image-set(
-				url("../images/people-office.jpg") 1x,
-				url("../images/2x-images/people-office@2x.jpg") 2x
-			);
-	}
+  .main-banner-hero {
+    padding-top: 188px;
+    padding-bottom: 188px;
+    background-image:
+      linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      image-set(
+        url('../images/people-office.jpg') 1x,
+        url('../images/2x-images/people-office@2x.jpg') 2x
+      );
+  }
 
-	.main-title {
-		margin-bottom: 48px;
-	}
-
+  .main-title {
+    margin-bottom: 48px;
+  }
 }
 
+/* --- Секция с кнопкой --- */
 .button-section {
-	text-align: center;
+  text-align: center;
 }
 
-/* feachers */
+/* --- Секция Features --- */
 
-
+/* --- Заголовок преимуществ --- */
 .features-title {
-	text-align: center;
-	font-size: 36px;
-	letter-spacing: 0.02em;
-	margin-bottom: 8px;
-	font-family: "Roboto", sans-serif;
-	font-weight: 700;
-	line-height: 1.11;
-	color: #2e2f42;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #2e2f42;
+  margin-bottom: 8px;
 }
 
 @media screen and (min-width: 768px) {
+  /* Выравнивание заголовка для планшета */
   .features-title {
     text-align: left;
   }
 }
 
+/* --- Сетка списка преимуществ --- */
 .features-list {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	row-gap: 72px;
-	column-gap: 24px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 72px;
+  column-gap: 24px;
 }
 
 .features-list-item {
-	margin-right: 0;
-	min-width: 288px;
+  min-width: 288px;
+  margin-right: 0;
 }
 
 .features-list-item:last-child {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
+/* --- Контейнер для иконок (скрыт на мобилках) --- */
 .features-list .features-icon-wrapper {
-	display: none;
+  display: none;
 }
 
+/* --- Текст описания --- */
 .feature-text {
-	font-size: 16px;
-	line-height: 1.5;
-	font-weight: 500;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 p.feature-text {
-	color: #434455;
-
+  color: #434455;
 }
 
+/* --- Адаптив карточек для планшета --- */
 @media screen and (min-width: 768px) {
+  .features-list-item {
+    max-width: 356px; /* Немного поправила под стандартную сетку */
+  }
 
-	.features-list-item {
-		max-width: 345px;
-		/* margin-right: 23px; */
-	}
-
-
-	/* .features-list-item:nth-child(1),
-	.features-list-item:nth-child(2) {
-		margin-bottom: 72px;
-	} */
-
-	/* .features-list-item:last-child {
-		margin-right: 0;
-	} */
-
-	.features-list-item {
-		flex-basis: calc((100% - 24px) / 2);
-	}
-
+  .features-list-item {
+    flex-basis: calc((100% - 24px) / 2);
+  }
 }
 
+/* --- Настройки для десктопа (иконки и сетка) --- */
 @media screen and (min-width: 1158px) {
-	
-	.features-list .features-icon-wrapper {
-		display: flex;
-		/* padding: 24px; */
-		margin-bottom: 8px;
-		background-color: #F4F4FD;
-		border: 1px solid #8e8f99;
-		border-radius: 4px;
-		max-width: 264px;
-		height: 112px;
-		fill: #2E2F42;
-		justify-content: center;
-		align-items: center;
-	}
+  .features-list .features-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 112px;
+    max-width: 264px;
+    margin-bottom: 8px;
 
-	.features-title {
-		font-size: 20px;
-		font-weight: 500;
-	}
+    background-color: #f4f4fd;
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+    fill: #2e2f42;
+  }
 
-	.features-list {
-		flex-direction: row;
-		flex-wrap: nowrap;
-		max-width: 1128px;
-		margin: 0 auto;
-	}
+  .features-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+  }
 
-	.features-list-item {
-		max-width: 264px;
-		min-width: auto;
-	}
+  .features-list {
+    flex-direction: row;
+  }
 
-	.feature-text {
-		font-weight: 400;
-		font-size: 16px;
-		line-height: 1.5;
-		letter-spacing: 0.02em;
-	}
+  /* --- Десктопная сетка (4 колонки) --- */
+  .features-list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 24px;
+    max-width: 1128px;
+    margin: 0 auto;
+  }
 
+  .features-list-item {
+    width: calc((100% - 72px) / 4);
+    max-width: 264px;
+    min-width: auto;
+  }
+
+  /* --- Текст преимуществ для десктопа --- */
+  .feature-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
 }
 
-/* team-section */
+/* --- Секция Команда (Team) --- */
 
+/* --- Сетка списка команды --- */
 section.team-block ul.team-list {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 72px 12px;
-	justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 72px 12px;
 }
 
 @media screen and (min-width: 768px) {
-
-	section.team-block ul.team-list {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 64px 24px;
-		justify-content: center;
-
-
-	}
-
+  /* Планшетная сетка команды */
+  section.team-block ul.team-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 64px 24px;
+  }
 }
 
 @media screen and (min-width: 1158px) {
-	
-	section.team-block ul.team-list {
-		display: flex;
-	}
+  /* Десктопная сетка команды */
+  section.team-block ul.team-list {
+    display: flex;
+    gap: 24px;
+  }
 }
 
+/* --- Оформление блока команды --- */
 section.team-block {
-	background: #F4F4FD;
+  background-color: #f4f4fd;
 }
 
 .team-area {
-	padding: 32px 16px 32px 16px;
+  padding: 32px 16px;
 }
 
+/* --- Имя сотрудника --- */
 .team-area h3 {
-	margin-bottom: 8px;
-	font-family: "Roboto", sans-serif;
-	font-weight: 500;
-	font-size: 20px;
-	line-height: 1.2;
-	letter-spacing: 0.02em;
-	text-align: center;
-	color: #2e2f42;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #2e2f42;
+  margin-bottom: 8px;
 }
 
+/* --- Должность сотрудника --- */
 .team-text {
-	font-family: "Roboto", sans-serif;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 1.5;
-	letter-spacing: 0.02em;
-	text-align: center;
-	color: #434455;
-	margin-bottom: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #434455;
+  margin-bottom: 8px;
 }
 
 @media screen and (min-width: 1158px) {
-	
-	.team-text {
-		font-weight: 400;
-		font-size: 16px;
-	}
+  /* Уточнение стилей для десктопа */
+  .team-text {
+    font-size: 16px;
+  }
 }
- 
 .team-title {
-	margin-bottom: 72px;
+  margin-bottom: 72px;
 }
 
+/* --- Карточка сотрудника (фон и тени) --- */
 section.team-block ul.team-list li {
-	background: #FFFFFF;
-	max-width: 264px;
-	border-radius: 0 0 4px 4px;
-	/* box-shadow: none; */
-	box-shadow: none;box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-              0px 1px 1px rgba(46, 47, 66, 0.16),
-              0px 2px 1px rgba(46, 47, 66, 0.08);  				  
+  background-color: #ffffff;
+  max-width: 264px;
+  border-radius: 0 0 4px 4px;
+  box-shadow:
+    0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
+/* --- Сброс стилей для вложенных списков --- */
 section.team-block ul.social-wrapper li {
-	box-shadow: none;
-	width: auto;
-	margin: 0;
+  box-shadow: none;
+  width: auto;
+  margin: 0;
 }
 
 section.team-block ul li:last-child {
-	margin-right: 0;
+  margin-right: 0;
 }
 
 section.team-block ul li img {
-	display: block;
+  display: block;
 }
 
+/* --- Сетка социальных иконок --- */
 .social-wrapper {
-	display: flex;
-	justify-content: center;
-	gap: 24px;
-	/* padding-bottom: 32px; */
+  display: flex;
+  justify-content: center;
+  gap: 24px;
 }
 
 @media screen and (min-width: 768px) {
-
-	.social-wrapper {
-		justify-content: left;
-	}
-
+  /* Выравнивание для планшета */
+  .social-wrapper {
+    justify-content: center; /* Оставила центр, чтобы карточка была симметричной */
+  }
 }
 
+/* --- Стили социальных ссылок команды --- */
 section.team-block ul li.team-social-list-item .social-link {
-	background-color: #4D5AE5;
-	border-radius: 50%;
-	display: flex;
-	justify-content: center;
-    align-items: center;
-    box-shadow: none;
-	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-	width: 40px;
-    height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5; /* Iris */
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-social-list-item svg {
-	fill: #F4F4FD;
+  fill: #f4f4fd; /* Cloud */
 }
 
 @media screen and (min-width: 1158px) {
-
-	section.team-block ul.team-list ul.social-wrapper li:hover {
-		box-shadow: none;;
-	}
-
-	section.team-block ul li.team-social-list-item .social-link:hover {
-		background-color: #404BBF;
-	}
-
+  /* Эффект при наведении на соцсети */
+  section.team-block ul li.team-social-list-item .social-link:hover,
+  section.team-block ul li.team-social-list-item .social-link:focus {
+    background-color: #404bbf; /* Твой любимый Ocean */
+  }
 }
 
-/* end-team-section */
-
-
-/* portfolio */
+/* ================= СЕКЦИЯ PORTFOLIO ================= */
 
 .portfolio-title {
-	margin-bottom: 72px;
+  text-align: center;
+  margin-bottom: 72px;
 }
 
+/* --- Список работ портфолио --- */
 .portfolio-list {
-	display: flex;
-    flex-wrap: wrap;
-  	row-gap: 48px;    /* між рядками */
-	column-gap: 0;
-	justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 48px;
+  column-gap: 0;
 }
 
 @media screen and (min-width: 768px) {
-	
-	.portfolio-list {
-		column-gap: 24px; /* між колонками */
-		row-gap: 72px;    /* між рядками */
-		justify-content: center;
-	}
-
+  /* Сетка портфолио для планшета */
+  .portfolio-list {
+    column-gap: 24px;
+    row-gap: 72px;
+    justify-content: center;
+  }
 }
 
 @media screen and (min-width: 1158px) {
-
-	.portfolio-list {
-		row-gap: 48px;
-	}
-
+  /* Сетка портфолио для десктопа */
+  .portfolio-list {
+    row-gap: 48px;
+  }
 }
 
+/* --- Изображения в карточках --- */
 li.portfolio-list-item img {
-	display: block;
-	max-width: 288px;
-	height: 280px;
+  display: block;
+  max-width: 288px;
+  height: 280px;
 }
 
 @media screen and (min-width: 768px) {
-	
-	li.portfolio-list-item img {
-		max-width: 356px;
-		height: 300px;
-	}
-
+  li.portfolio-list-item img {
+    max-width: 356px;
+    height: 300px;
+  }
 }
 
 @media screen and (min-width: 1158px) {
-	
-	li.portfolio-list-item img {
-		max-width: 360px;
-	}
-
+  li.portfolio-list-item img {
+    max-width: 360px;
+  }
 }
 
+/* --- Описание карточки --- */
 .portfolio-area {
-	padding: 32px 16px;
-	border-bottom: 1px solid #e7e9fc;
-    border-left: 1px solid #e7e9fc;
-    border-right: 1px solid #e7e9fc;
+  padding: 32px 16px;
+  border-bottom: 1px solid #e7e9fc;
+  border-left: 1px solid #e7e9fc;
+  border-right: 1px solid #e7e9fc;
 }
 
+/* --- Заголовок проекта в портфолио --- */
 .portfolio-area .portfolio-item-title {
-	font-family: "Roboto", sans-serif;
-	font-weight: 500;
-	font-size: 20px;
-	line-height: 1.2;
-	letter-spacing: 0.02em;
-	color: #2e2f42;
-	margin-bottom: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+  margin-bottom: 8px;
 }
 
+/* --- Категория проекта --- */
 .portfolio-area .portfolio-item-type {
-	font-family: "Roboto", sans-serif;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 1.5;
-	letter-spacing: 0.02em;
-	color: #434455;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #434455;
 }
 
+/* --- Обертка изображения (Box) --- */
 .box {
-	position: relative;
-	margin: 0;
-    max-width: 288px;
-  	height: 280px;
-	margin: 0 auto;
-	background-color: #4D5AE5;
-	overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 288px;
+  height: 280px;
+  background-color: #4d5ae5; /* Iris */
 }
 
 @media screen and (min-width: 768px) {
-	
-	.box {
-		max-width: 356px;
-		height: 300px;
-	}
-
+  /* Размеры Box для планшета */
+  .box {
+    max-width: 356px;
+    height: 300px;
+  }
 }
 
-@media screen and (min-width: 1157px) {
-
-	.box {
-		max-width: 360px;
-	}
-
+@media screen and (min-width: 1158px) {
+  /* Размеры Box для десктопа */
+  .box {
+    max-width: 360px;
+  }
 }
 
-/* overlay on portfolio item */
-
+/* --- Эффекты карточек портфолио --- */
 li.portfolio-list-item {
-	box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08);
-	transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-	
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@media screen and (min-width:1158px) {
-	
-	li.portfolio-list-item {
-		box-shadow: none;
-	}
-
+@media screen and (min-width: 1158px) {
+  li.portfolio-list-item {
+    box-shadow: none;
+  }
 }
 
 li.portfolio-list-item:hover {
-	box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 
-	0 1px 1px 0 rgba(46, 47, 66, 0.16), 
-	0 1px 6px 0 rgba(46, 47, 66, 0.08);
-	transform: translateY(0);
-	
+  box-shadow:
+    0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16),
+    0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  transform: translateY(0);
 }
 
+/* --- Оверлей (вылетающий текст) --- */
 .overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: #4D5AE5;
-	color: #F4F4FD;
-	transform: translateY(100%);
-	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  color: #f4f4fd;
+  transform: translateY(100%); /* Прячем вниз */
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-list-item:hover .box .overlay {
-	transform: translateY(0);
+  transform: translateY(0); /* Показываем при наведении */
 }
 
+/* --- Текст внутри оверлея --- */
 .overlay p {
-	color: #F4F4FD;
-	padding: 40px 32px;
-	margin: 0;
-	font-size: 16px;
+  color: #f4f4fd;
+  padding: 40px 32px;
+  margin: 0;
+  font-size: 16px;
 }
 
+/* --- Спец-код для оверлея --- */
 .overlay code {
-	display: inline-block;
-	padding: 2px 4px;
-	border-radius: 2px;
-	background-color: #4D5AE5;
+  display: inline-block;
+  padding: 2px 4px;
+  border-radius: 2px;
+  background-color: #4d5ae5;
 }
 
-
-
-/* end portfolio */
-
-
-/* footer */
+/* ================= FOOTER ================= */
 
 .footer-area {
-	display: flex;
-    justify-content: center;
-	padding-top: 96px;
- 	padding-bottom: 96px;
-}
-
-@media screen and (min-width: 1158px) {
-	
-	.footer-area {
-		padding-left: 0;
-		padding-top: 100px;
- 		padding-bottom: 100px;
-	}
-
+  display: flex;
+  justify-content: center;
+  padding: 96px 0;
 }
 
 @media screen and (min-width: 768px) {
-	
-	.footer-area .container {
-		padding-left: 108px;
-		padding-right: 108px;
-	}
-
+  /* Контейнер футера для планшета */
+  .footer-area .container {
+    padding-left: 108px;
+    padding-right: 108px;
+  }
 }
 
 @media screen and (min-width: 1158px) {
+  /* Футер для десктопа */
+  .footer-area {
+    padding: 100px 0;
+  }
 
-	.footer-area .container {
-		padding-left: 15px;
-		padding-right: 15px;
-	}
-
+  .footer-area .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
+/* --- Контентная часть футера --- */
 .footer-content-section {
-	display: flex;
-	flex-direction: column;
-	gap: 72px;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  justify-content: center;
 }
 
 @media screen and (min-width: 768px) {
-		
-	.footer-content-section {
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: flex-start;
-		column-gap: 24px;
-		row-gap: 72px;
-	}
-
+  /* Сетка футера для планшета */
+  .footer-content-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    column-gap: 24px;
+    row-gap: 72px;
+  }
 }
 
 @media screen and (min-width: 1158px) {
-
-	.footer-content-section {
-		align-items: baseline;
-		flex-wrap: nowrap;
-		column-gap: 0;
-	}
-
-	.footer-content-section > * {
-		flex-basis: auto;
-	}
-
+  /* Сетка футера для десктопа (в одну линию) */
+  .footer-content-section {
+    align-items: baseline;
+    flex-wrap: nowrap;
+    column-gap: 0;
+  }
 }
 
+/* Сброс базиса для элементов футера */
+.footer-content-section > * {
+  flex-basis: auto;
+}
+
+/* --- Центрирование заголовков на мобилках --- */
 .footer-content-section .block-1 .logo-link,
 .footer-content-section .block-2 .section-footer-socials-title,
 .footer-content-section .block-3 .footer-block-3-title {
-	text-align: center;
+  text-align: center;
 }
 
 @media screen and (min-width: 768px) {
-	
-	.footer-content-section .block-1 .logo-link,
-	.footer-content-section .block-2 .section-footer-socials-title {
-		text-align: left;
-	}
-
-	.footer-content-section .block-1 {
-		max-width: 264px;
-	}
-
+  /* Выравнивание по левому краю для планшета */
+  .footer-content-section .block-1 .logo-link,
+  .footer-content-section .block-2 .section-footer-socials-title {
+    text-align: left;
+  }
+}
+/* --- Отступы и заголовки футера --- */
+.footer-content-section .footer-block {
+  margin: 0;
 }
 
 .footer-content-section .block-3 .footer-block-3-title {
-	color: white;
-	margin-bottom: 16px;
+  color: white;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
-.footer-content-section .footer-block {
-	margin: 0;
+/* --- Логотип в футере --- */
+.footer-content a.logo-link {
+  display: block;
+  margin-bottom: 16px;
+  color: #4d5ae5;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.16667;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
-.footer-content a.logo-link{
-	color: #F4F4FD;
-	text-decoration: none;
-    padding-top: 0;
-    display: block;
-	font-family: "Raleway", sans-serif;
-	font-weight: 700;
-	font-size: 18px;
-	line-height: 1.16667;
-	letter-spacing: 0.03em;
-	text-transform: uppercase;
+.footer-content a.logo-link span {
+  color: #f4f4fd;
 }
 
+/* --- Текст инфо в футере --- */
 .footer-content p.footer-info {
-	color: #F4F4FD;
-	padding-top: 16px;
+  color: #f4f4fd;
+  padding-top: 16px;
 }
 
 p.footer-info {
-	min-width: 264px;
+  min-width: 264px;
 }
 
+/* --- Сетка для десктопа (1158px) --- */
 @media screen and (min-width: 1158px) {
+  .footer-content-section .block-1 .logo-link,
+  .footer-content-section .block-2 .section-footer-socials-title,
+  .footer-content-section .block-3 .footer-block-3-title {
+    text-align: left;
+  }
 
-	.footer-content-section .block-1 .logo-link,
-	.footer-content-section .block-2 .section-footer-socials-title,
-	.footer-content-section .block-3 .footer-block-3-title {
-		text-align: left;
-	}
+  .footer-content-section .block-1 {
+    margin: 0 120px 0 0;
+    max-width: 260px;
+  }
 
-	.footer-content-section .block-1 {
-		margin: 0 120px 0 0;
-		max-width: 260px;
-	}
+  .footer-content-section .block-2 {
+    /* margin-right: 83px; */
+  }
 
-	.footer-content-section .block-2 {
-		/* margin-right: 83px; */
-	}
+  .footer-content-section .block-3 {
+    margin-left: auto;
+  }
 
-	.footer-content-section .block-3 {
-		margin-left: auto;
-	}
-
-	.footer-content-section .block-3 .footer-block-3-title {
-    	text-align: left;
-	}
-
+  .footer-content-section .block-3 .footer-block-3-title {
+    text-align: left;
+  }
 }
 
+/* --- Соцсети в футере --- */
 .footer-area .social-wrapper {
-	gap: 16px;
+  gap: 16px;
 }
 
 .section-footer-socials .section-footer-socials-title {
-	color: white;
-	font-family: "Roboto", sans-serif;
-	margin-bottom: 16px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
+/* --- Ссылки соцсетей в футере --- */
 footer ul.social-wrapper li.team-social-list-item .social-link {
-	background-color: #4D5AE5;
-    /* padding: 12px; */
-    border-radius: 50%;
-    display: flex;
-    box-shadow: none;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-	width: 40px;
-	height: 40px;
-	display: flex;
-	justify-content: center;
-	align-items: center	;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-footer ul.social-wrapper  li.team-social-list-item .social-link:hover {
-	background-color: #31D0AA;
+/* Ховер для соцсетей футера (бирюзовый) */
+footer ul.social-wrapper li.team-social-list-item .social-link:hover,
+footer ul.social-wrapper li.team-social-list-item .social-link:focus {
+  background-color: #31d0aa;
 }
 
+/* --- Настройки сетки для заголовка (планшет) --- */
 @media screen and (min-width: 768px) {
-
-	.footer-content-section .block-3 .footer-block-3-title {
-    	text-align: left;
-	}
-
+  .footer-content-section .block-3 .footer-block-3-title {
+    text-align: left;
+  }
 }
 
-/* @media screen and (min-width: 1158px) {
-
-	.footer-content-section .block-3 {
-		min-width: 455px;
-	}
-
-} */
-
+/* --- Секция формы подписки (начало) --- */
 @media screen and (min-width: 1158px) {
-
-	.footer-form {
-		display: flex;
-	}
-
+  .footer-form {
+    display: flex;
+    align-items: center;
+  }
 }
 
-/* subscribe form */
-
+/* --- Форма подписки (Subscribe form) --- */
 .footer-block-3-title {
-	font-family: "Roboto", sans-serif;
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 1.2;
-	letter-spacing: 0.02em;
-	color: #ffffff;
-	margin-bottom: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin-bottom: 16px;
 }
 
 .footer-form {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 @media screen and (min-width: 768px) {
-
-	.footer-form {
-		display: flex;
-		flex-wrap: nowrap;
-		justify-content: left;
-	}
+  /* Форма в одну строку для планшета */
+  .footer-form {
+    flex-wrap: nowrap;
+    justify-content: left;
+  }
 }
 
-.footer-form .footer-input{
-	border: 1px solid #fff;
-	border-radius: 4px;
-	width: 288px;
-	height: 40px;
-	background-color: #2e2f42;
-	padding: 8px 16px;
-	margin: 0 0 16px 0;
-	color: #fff;
+/* --- Поле ввода (Input) --- */
+.footer-form .footer-input {
+  width: 288px;
+  height: 40px;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  background-color: #2e2f42;
+  padding: 8px 16px;
+  margin: 0 0 16px 0;
+  color: #ffffff;
 }
 
 @media screen and (min-width: 768px) {
-	.footer-form .footer-input {
-		margin: 0 24px 0 0;
-		width: 264px;
-	}
+  /* Настройки инпута для планшета */
+  .footer-form .footer-input {
+    width: 264px;
+    margin: 0 24px 0 0;
+  }
 }
 
 @media screen and (min-width: 1158px) {
-
-	.footer-form .footer-input{
-		width: 264px;
-		margin-right: 24px;
-		margin: 0 24px 0 0;
-		transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-	}
-
+  .footer-form .footer-input {
+    width: 264px;
+    margin-right: 24px;
+    margin: 0 24px 0 0;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
+/* --- Плейсхолдер инпута подписки --- */
 .footer-form .footer-input::placeholder {
-	font-weight: 400;
-	font-size: 12px;
-	line-height: 2;
-	letter-spacing: 0.04em;
-	color: #fff;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #fff;
 }
 
+/* --- Основные стили кнопки Subscribe --- */
 .footer-button {
-	border-radius: 4px;
-    padding: 8px 25px;
-    width: 165px;
-    height: 40px;
-    text-align: left;
-	display: flex;
-    align-items: center;
-	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 4px;
+  padding: 8px 25px;
+  width: 165px;
+  height: 40px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* --- Ховер и фокус для кнопки --- */
 .footer-button:focus-within,
 .footer-button:focus,
 .footer-button:hover {
-	background-color: #31D0AA;
-	outline: none;
+  background-color: #31d0aa;
+  outline: none;
 }
 
+/* --- Ховер и фокус для инпута --- */
 .footer-input:focus-within,
 .footer-input:focus,
 .footer-input:hover {
-	border: 1px solid #31D0AA;
-	outline: none;
+  border: 1px solid #31d0aa;
+  outline: none;
 }
 
+/* --- Цвет плейсхолдера при фокусе --- */
 .footer-input::placeholder:focus,
 .footer-input::placeholder:focus-within,
 .footer-input::placeholder:hover {
-	color: #31D0AA;
-
+  color: #31d0aa;
 }
 
+/* --- Обертка кнопки --- */
 .footer-button-wrapper {
-	position: relative;
-	width: fit-content;
+  position: relative;
+  width: fit-content;
 }
 
+/* --- Иконка внутри кнопки --- */
 .footer-button-icon {
-	fill: #fff;
-    stroke: #fff;
-    position: absolute;
-    top: 10px;
-    right: 19px;
+  fill: #fff;
+  stroke: #fff;
+  position: absolute;
+  top: 10px;
+  right: 19px;
 }
 
-
-/* end footer */
-
-
-
-/* modal window */
-
+/* --- Секция модального окна --- */
 .modal-overlay {
-	background-color: rgba(46, 47, 66, 0.4);
-	position: fixed;
-	inset:0;
-	width: 100%;
-	height: 100%;
-	z-index: 1000;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: rgba(46, 47, 66, 0.4);
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition:
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-	/* DO NOT DELETE BELOW - CLASS FOR WORK OF THE FORM */
-	/*  */opacity: 0;
-  	/*  */visibility: hidden;
-	/*  */pointer-events: none;
-	/*  */
-}
-
-/* @media screen and (min-width: 768px) {
-	
-	.modal-overlay {
-		display: none;
-	}
-
-} */
-
-/* DO NOT DELETE - CLASS FOR WORK OF THE FORM */
-			.modal-overlay.is-open {
-				opacity: 1;
-				visibility: visible;
-				pointer-events: initial;
-			}
-
-.modal {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-
-	background-color: #FCFCFC;
-	padding: 72px 16px 24px 16px;
-	border-radius: 4px;
-	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 
-				0 1px 3px 0 rgba(0, 0, 0, 0.12), 
-				0 2px 1px 0 rgba(0, 0, 0, 0.2);
-	max-width: 288px;
-	min-height: 635px;
-	/* overflow-y: auto;
-	position: relative;
-	z-index: 1001; */
+  /* Состояние по умолчанию (скрыто) */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 @media screen and (min-width: 768px) {
-
-	.modal {
-		max-width: 408px;
-		padding: 72px 24px 24px 24px;
-	}
-
+  .modal-overlay {
+    display: none;
+  }
 }
 
+/* Класс для открытия формы */
+.modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
+/* --- Стили основного модального окна --- */
+.modal {
+  /* Геометрия и отступы */
+  min-height: 635px;
+  max-width: 288px;
+  padding: 72px 16px 24px 16px;
+
+  /* Внешний вид */
+  background-color: #fcfcfc;
+  border-radius: 4px;
+  box-shadow:
+    0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    0 2px 1px 0 rgba(0, 0, 0, 0.2);
+
+  /* Центрирование */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Резервные настройки */
+  /* z-index: 1001;
+  position: relative;
+  overflow-y: auto; */
+}
+
+/* --- Адаптив под планшет --- */
+@media screen and (min-width: 768px) {
+  .modal {
+    padding: 72px 24px 24px 24px;
+    max-width: 408px;
+  }
+}
+/* --- Кнопка закрытия модального окна --- */
 button.modal-close {
-	position: absolute;
-	top: 24px;
-	right: 24px;
-	background: none;
-	cursor: pointer;
-	border-radius: 100%;
-	fill: #2e2f42;
-	/* stroke-width: 1px; */
-	stroke: rgba(0, 0, 0, 0.1);
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	background-color: #e7e9fc;
-	padding: 0;
-	width: 24px;
-    height: 24px;
-	line-height: 0;	
-	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+  padding: 0;
+
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  cursor: pointer;
+  background-color: #e7e9fc;
+  border-radius: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  /* Иконка и обводка */
+  fill: #2e2f42;
+  stroke: rgba(0, 0, 0, 0.1);
+  /* stroke-width: 1px; */
+
+  line-height: 0;
+  transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-button.modal-close:hover {
-	background-color: #404bbf;
-	fill: #fff;
-	border: 1px solid #4D5AE5;
+/* Эффект при наведении на крестик */
+button.modal-close:hover,
+button.modal-close:focus {
+  background-color: #404bbf;
+  fill: #fff;
+  border: 1px solid #4d5ae5;
 }
 
-.modal-form input {
-	width: 100%;
-	padding: 8px 8px 8px 45px;
-	border: 1px solid rgba(46, 47, 66, 0.4);
-	border-radius: 4px;
-	font-family: "Roboto", sans-serif;
-	font-weight: 400;
-	font-size: 12px;
-	line-height: 1.16;
-	line-height: 1.5;
-	letter-spacing: 0.02em;
-	color: #2E2F42;
-	outline: none;
-	height: 40px;
-	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+/* --- Поля ввода в форме модалки --- */
+.modal-form-input {
+  width: 100%;
+  height: 40px;
+  padding: 8px 8px 8px 45px;
 
+  background-color: transparent;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+
+  color: #2e2f42;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.02em;
+
+  outline: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .modal-form input:focus,
 .modal-form textarea:focus {
-	border: 1px solid #4d5ae5;
-	outline: none;
+  border: 1px solid #4d5ae5;
+  outline: none;
 }
 
+/* --- Заголовок формы в модальном окне --- */
 .modal-form .form-title {
-	font-family: "Roboto", sans-serif;
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 1.5;
-	letter-spacing: 0.02em;
-	color: #2e2f42;
-	margin-bottom: 16px;
-	text-align: center;
-	padding: 0 30px;
+  display: block;
+  margin-bottom: 16px;
+  padding: 0 30px;
+
+  color: #2e2f42;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: center;
 }
 
 @media screen and (min-width: 768px) {
-	.modal-form .form-title {
-		padding: 0;
-	}
+  .modal-form .form-title {
+    padding: 0;
+  }
 }
 
+/* --- Стили подписей (Label) --- */
 .modal-form .modal-label {
-	font-family: "Roboto", sans-serif;
-	font-weight: 400;
-	font-size: 12px;
-	line-height: 1.16;
-	letter-spacing: 0.04em;
-	color: #8e8f99;
-	display: block;
-	margin-bottom: 4px;
+  display: block;
+  margin-bottom: 4px;
+
+  color: #8e8f99;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: 0.04em;
 }
 
+/* --- Поле для комментария (Textarea) --- */
 .modal-form textarea {
-	width: 100%;
-	height: 120px;
-	padding: 8px;
-	border: 1px solid rgba(46, 47, 66, 0.4);
-	border-radius: 4px;
-	margin-bottom: 16px;
-	font-family: "Roboto", sans-serif;
-	font-weight: 400;
-	font-size: 12px;
-	line-height: 1.16;
-	letter-spacing: 0.04em;
-	color: rgba(46, 47, 66, 0.4);
-	resize: none;
-	outline: none; 
-	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  height: 120px;
+  padding: 8px;
+  margin-bottom: 16px;
+
+  background-color: transparent;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+
+  color: rgba(46, 47, 66, 0.4);
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: 0.04em;
+
+  resize: none;
+  outline: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* --- Кастомный чекбокс --- */
 .modal-form .checkbox-custom {
-	margin-bottom: 24px;
-	position: absolute;
-    top: 4px;
-    padding-left: 5px;
+  position: absolute;
+  top: 4px;
+  padding-left: 5px;
+  margin-bottom: 24px;
 }
 
+/* --- Кнопка отправки формы --- */
 .modal-form .modal-send-button {
-	font-family: inherit;
-	font-weight: 500;	
-	font-size: 16px;
-	line-height: 1.5;
-	letter-spacing: 0.04em;
-	background-color: #4D5AE5;
-	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
-	cursor: pointer;
-	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-	max-width: 169px;
-	padding: 16px 32px;
-	border-radius: 4px;
-	color: #ffffff;
-	border: none;
-	margin: 0 auto;
-    display: block;
+  display: block;
+  margin: 0 auto;
+  max-width: 169px;
+  padding: 16px 32px;
+
+  background-color: #4d5ae5;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* form-icons */
-
+/* --- Иконки и обертки полей ввода --- */
 .input-wrapper {
-	margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .input-wrapper .text-field {
-	position: relative;
-	width: 100%;
-	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  width: 100%;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input-wrapper .text-field .input-icon {
-	position: absolute;
-	top: 50%;
-	left: 19px;
-	transform: translateY(-50%);
-	pointer-events: none;
-	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  top: 50%;
+  left: 19px;
+  transform: translateY(-50%);
+
+  pointer-events: none;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .text-field:focus-within .input-icon,
@@ -1636,64 +1662,79 @@ button.modal-close:hover {
 }
 
 .modal-form input.input-checkbox {
-	width: auto;
+  width: auto;
 }
 
-/* checkbox */
-
+/* --- Контейнер для чекбокса --- */
 .checkbox-wrapper {
-	margin-bottom: 24px;
-	position: relative;
+  position: relative;
+  margin-bottom: 24px;
 }
 
+/* --- Текст соглашения (Label) --- */
 .terms-label {
-	display: flex;
-	align-items: baseline;
-	column-gap: 8px;
-	font-weight: 400;
-	font-size: 12px;
-	line-height: 1.16667;
-	letter-spacing: 0.04em;
-	color: #8e8f99;
+  display: flex;
+  align-items: baseline;
+  column-gap: 8px;
+
+  color: #8e8f99;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.16667;
+  letter-spacing: 0.04em;
 }
 
+/* Состояние при фокусе */
 .input-checkbox:focus + .terms-label .custom-checkbox {
-	border-color: #404BBF;
-	outline: none;
+  border-color: #404bbf;
+  outline: none;
 }
 
+/* Состояние когда галочка поставлена */
 .input-checkbox:checked + .terms-label .custom-checkbox {
-	background-color: #404BBF;
-	border: 1px solid #404bbf;
-	fill: #F4F4FD;
+  background-color: #404bbf;
+  border: 1px solid #404bbf;
+  fill: #f4f4fd;
 }
 
+/* --- Кастомная иконка галочки --- */
 .custom-checkbox {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 16px;
-	width: 16px;
-	border-radius: 2px;
-	border: 1px solid rgba(46, 47, 66, 0.4);
-	background-color: transparent;
-	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-	fill: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 16px;
+  height: 16px;
+
+  background-color: transparent;
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+
+  fill: none;
+  transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* --- Ссылка-акцент в правилах --- */
 .akcent {
-	text-decoration: underline;
-	text-decoration-skip-ink: none;
-	color: #4d5ae5;
-	transition: text-decoration-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: #4d5ae5;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+
+  transition:
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    text-decoration-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Ховер для акцента */
 .akcent:hover {
-	color: #404BBF;
-	text-decoration: none;
+  color: #404bbf;
+  text-decoration: none;
 }
 
-button.modal-send-button:hover,
-button.modal-send-button:focus {
-	background-color: #404BBF;
+/* --- Состояния кнопки отправки (финал) --- */
+.button.modal-send-button:hover,
+.button.modal-send-button:focus {
+  background-color: #404bbf;
 }
