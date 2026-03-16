@@ -289,7 +289,6 @@ address {
 .header-container .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .page-header {
@@ -1722,10 +1721,6 @@ button.modal-close:focus {
 .akcent:hover {
   color: #404bbf;
   text-decoration: none;
-}
-/* 1. Для телефона в МОБИЛЬНОМ МЕНЮ (где ты дописала accent) */
-.mobile-menu-social-link.accent {
-  color: #4d5ae5;
 }
 
 /* 2. Для телефона в ШАПКЕ/ПЛАНШЕТЕ (где у тебя уже был social-tel) */
