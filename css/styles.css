@@ -550,7 +550,7 @@ button.burger-button {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.11;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   color: #2e2f42;
 }
 
@@ -573,7 +573,7 @@ button.burger-button {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   color: #434455;
   transition: color 250ms ease;
 }
@@ -1722,4 +1722,18 @@ button.modal-close:focus {
 .akcent:hover {
   color: #404bbf;
   text-decoration: none;
+}
+/* 1. Для телефона в МОБИЛЬНОМ МЕНЮ (где ты дописала accent) */
+.mobile-menu-social-link.accent {
+  color: #4d5ae5;
+}
+
+/* 2. Для телефона в ШАПКЕ/ПЛАНШЕТЕ (где у тебя уже был social-tel) */
+.address-link.social-tel {
+  color: #4d5ae5;
+}
+
+/* 3. Для почты в ШАПКЕ/ПЛАНШЕТЕ (чтобы она была серой) */
+.address-link.social-mail {
+  color: #434455;
 }
