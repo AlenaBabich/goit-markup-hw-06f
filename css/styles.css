@@ -281,14 +281,10 @@ address {
 
 /* ================= ШАПКА САЙТА (HEADER) ================= */
 
-.header-container {
-  display: flex;
-  justify-content: center;
-}
-
 .header-container .container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .page-header {
@@ -379,25 +375,42 @@ address {
   transform: scaleX(1);
 }
 
+/* Общие стили для почты и телефона на мобилках */
 .social-list-item a {
-  /* Стили для ссылок в адресном блоке */
   display: block;
   font-family: 'Roboto', sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 1.17;
-  letter-spacing: 0.02em;
-  color: #434455; /* Цвет Slate */
-
+  letter-spacing: 0.04em; /* Требование ментора для мобилок */
   padding-top: 24px;
   padding-bottom: 24px;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* Выделяем конкретно ПОЧТУ (Slate) */
+.social-mail {
+  color: #434455;
+}
+
+/* Выделяем конкретно ТЕЛЕФОН (Ocean/Iris) */
+.social-tel {
+  color: #4d5ae5; /* Синий цвет, чтобы отличался от почты */
+}
+
+/* Стили для десктопа */
 @media screen and (min-width: 1158px) {
-  /* --- Настройка шрифтов для десктопа --- */
   .social-list-item a {
     font-size: 16px;
     line-height: 1.5;
+    letter-spacing: 0.02em; /* Возвращаем компактный интервал на десктопе */
+    color: #434455;
+  }
+
+  /* На десктопе делаем их снова одного цвета, если того требует макет */
+  .social-mail,
+  .social-tel {
+    color: #434455;
   }
 }
 
@@ -558,21 +571,22 @@ button.burger-button {
 }
 
 .mobile-menu-nav {
-  margin-bottom: 168px;
+  margin-bottom: auto;
 }
 
 /* --- Социальные сети в мобильном меню --- */
 .mobile-menu .social-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
+  font-style: normal;
 }
 
 .mobile-menu .social-list-item a {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   color: #434455;
   transition: color 250ms ease;
 }
@@ -1146,11 +1160,12 @@ li.portfolio-list-item:hover {
 @media screen and (min-width: 768px) {
   /* Сетка футера для планшета */
   .footer-content-section {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    column-gap: 24px;
-    row-gap: 72px;
+    display: flex; /* ОБЯЗАТЕЛЬНО: без этого wrap не работает */
+    flex-wrap: wrap; /* Позволяет блокам переноситься */
+    align-items: baseline; /* Выравнивает заголовки по одной линии */
+    column-gap: 24px; /* Расстояние между колонками */
+    row-gap: 72px; /* Расстояние между рядами */
+    width: 584px; /* ОГРАНИЧЕНИЕ: чтобы в ряд влезло только 2 блока */
   }
 }
 
@@ -1200,7 +1215,7 @@ li.portfolio-list-item:hover {
 .footer-content a.logo-link {
   display: block;
   margin-bottom: 16px;
-  color: #4d5ae5;
+  color: #f4f4fd; /* Світлий колір для Studio */
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 18px;
@@ -1211,7 +1226,7 @@ li.portfolio-list-item:hover {
 }
 
 .footer-content a.logo-link span {
-  color: #f4f4fd;
+  color: #4d5ae5; /* Синій колір для Web */
 }
 
 /* --- Текст инфо в футере --- */
@@ -1488,9 +1503,9 @@ button.modal-close {
 
   cursor: pointer;
   background-color: #e7e9fc;
-  border-radius: 100%;
+  border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
-
+  flex-shrink: 0;
   /* Иконка и обводка */
   fill: #2e2f42;
   stroke: rgba(0, 0, 0, 0.1);
